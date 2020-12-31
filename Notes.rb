@@ -27,23 +27,23 @@
 #           Search for plays and characters
 #           Add play to virtual library
 #         - User should be able to:
-#             - Input play and character details for a new play
+#             - Users can create, edit, and view plays
 #             - Locate list of plays or playwrights
-#             - Edit details of playwrights, plays, and characters
 #         - What does your app do?
 #           App allows users to create, edit, and view plays
 # [x] 4. MVP vs. stretch goals
 #         - MVP
 #             - Users can create, edit, and view plays
 #         - Stretch goals
+#             - Incorporate chararacters within a play (play has_many characters)
 #             - Use seed data from Dramatists Play Service, Inc.
 #             - Incorporate pictures of plays in HTML
 # [x] 5. Corneal Gem
 # [x] 6. GitHub Repo
 # [ ] 7. Build models
-#         - Migrations
-#         - Model classes
-#         - Associations
+#         [] Migrations
+#         [x] Model classes
+#         [x] Associations
 # [ ] 8. Test models and associations in console
 #         - Create seed data
 #         - Adjust migrations (as needed)
