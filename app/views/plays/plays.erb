@@ -1,0 +1,77 @@
+<h1>Here are your plays</h1>
+
+<!doctype html>
+<html>
+  <head>
+    <title>Tweets</title>
+    <style>
+      div.welcome {
+        text-align: center;
+      }
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+    }
+    .play_btns {
+      background-color: #ADD8E6;
+      padding: 8px 18px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4x;
+      transition-duration: 0.4s;
+    }
+    .play_btns:hover {
+      background-color: #0277bd;
+      color: white;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="welcome">
+      <h4><em> Hello, <%= current_user.name %>!</em></h4>
+    </div>
+    <br>
+
+    <h4> Here are your plays, <%= current_user.name %>.</h4>
+    <br>
+
+    <% if current_user.plays.count == 0 %>
+      <%= "Oh snap! It looks like you don't have any plays." %>
+    <% else %>
+      <ul>
+        <% current_user.plays.each do |play| %>
+        <div>
+          <li><%= play.name %></li>
+        </div>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <br>
+    <hr class="solid">
+    <br>
+    <h4> All Plays by Title </h4>
+    <ul>
+      <!-- add hyperlink for details of plays -->
+      <!-- sort by alpha order -->
+      <!-- add option by author -->
+      <br>
+      <% @plays.each do |play| %>
+        <li><%= play.name %></li>
+        <% end %>
+    </ul>
+
+    <hr class="solid">
+    <div>
+      <!-- edit button styles -->
+      <p><a class="button" href="/plays/new"><button class="play_btns">Add New Play</button></a></p>
+      <p><a class="button" href="/logout"><button class="play_btns">Logout</button></a></p>
+    </div>
+
+  </body>
+</html>
