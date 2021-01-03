@@ -47,3 +47,11 @@
 # [ ] 8. Test models and associations in console
 #         - Create seed data
 #         - Adjust migrations (as needed)
+# [x] 9. Create your controllers
+# [ ] 10. Enable 'sessions' in 'ApplicationController'
+# [ ] 11. Build routs and views for login
+#         - Build your 'get' login route + 'login' view
+#         - Build your 'post' login route (authenticate and leverage session hash)
+#         - Build 'user/:id' route + 'show' view
+# [ ] 12. Create 'ApplicationController' helper methods
+#         - checks if user is logged_in

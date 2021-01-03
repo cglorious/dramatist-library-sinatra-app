@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Signup - The Dramatist Library</title>
+    <style>
+      #signup_wrapper {
+        font-size: 14px;
+        text-align: center;
+      }
+      .btns {
+        background-color: #ADD8E6;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h2> Sign up here. <h2>
+      <!-- align input fields -->
+      <div id="signup_wrapper">
+        <form class="" action="/signup" method="post">
+          <p><label for="name">Name:</label>
+          <input type= "text" name="name" value=""></p>
+
+          <p><label for="email">Email:</label>
+          <input type= "text" name="email" value=""></p>
+
+          <p><label for="password">Password:</label>
+          <input type= "text" name="password" value=""></p>
+
+          <input class= "btns" type= "submit" value="Create Account">
+        </form>
+      </div>
+
+</body>
+</html>

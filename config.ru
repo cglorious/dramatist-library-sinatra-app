@@ -7,5 +7,6 @@ end
 #send patch, delete, put requests
 use Rack::MethodOverride
 
-#mount controllers with 'use'
+use PlayController
+use PlaywrightController
 run ApplicationController
