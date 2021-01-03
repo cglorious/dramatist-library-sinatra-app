@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 20201231221145) do
     t.string  "genre"
     t.integer "cast_total"
     t.text    "synopsis"
+    t.integer "playwright_id"
   end
 
   create_table "playwrights", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password_digest"
     t.string "bio"
+    t.string "password_digest"
   end
 
 end

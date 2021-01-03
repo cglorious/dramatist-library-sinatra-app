@@ -40,8 +40,8 @@
 #             - Incorporate pictures of plays in HTML
 # [x] 5. Corneal Gem
 # [x] 6. GitHub Repo
-# [ ] 7. Build models
-#         [] Migrations
+# [x] 7. Build models
+#         [x] Migrations
 #         [x] Model classes
 #         [x] Associations
 # [ ] 8. Test models and associations in console

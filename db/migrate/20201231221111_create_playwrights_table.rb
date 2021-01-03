@@ -3,8 +3,8 @@ class CreatePlaywrightsTable < ActiveRecord::Migration
     create_table :playwrights do |t|
       t.string :name
       t.string :email
-      t.string :password_digest
       t.string :bio
+      t.string :password_digest
     end
   end
 end

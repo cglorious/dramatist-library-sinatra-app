@@ -6,6 +6,7 @@ class CreatePlaysTable < ActiveRecord::Migration
       t.string :genre
       t.integer :cast_total
       t.text :synopsis
+      t.integer :playwright_id
     end
   end
 end
