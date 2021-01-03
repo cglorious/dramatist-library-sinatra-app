@@ -31,17 +31,18 @@
 
     <h2>Add a new play.</h2>
     <br>
-    <form action="/plays" method="POST">
+    <form action="/plays" method="post">
       <p><label for="name">Name:</label>
       <input type="text" name="name" value=""></p>
 
       <p><label for="genre">Genre:</label>
-      <input type="text" value="">
+      <input type="text" name="genre" value="">
 
       <p><label for="synopsis">Synopsis:</label>
-      <input type="text-area" value="">
+      <input type="text-area" name="synopsis" value="">
       <br>
       <br>
+      <!-- not routing to post /play -->
       <input class= "btn-new" type= "submit" value="Add Play">
     </form>
 

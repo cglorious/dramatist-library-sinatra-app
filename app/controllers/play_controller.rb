@@ -10,7 +10,28 @@ class PlayController < ApplicationController
   end
 
   post '/plays' do
-    "You made a new play."
+    if logged_in?
+      if params[:name] == "" || params[:genre] == "" || params[:synopsis] == ""
+        #add error message
+        redirect to '/plays/new'
+      else
+        binding.pry
+        @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], user_id: current_user.id)
+        redirect to "/plays/#{@play.id}"
+      end
+    else
+      redirect to '/login'
+    end
   end
+
+  get '/plays/:id' do
+    if logged_in?
+      @play = Play.find_by_id(params[:id])
+      erb :'plays/show'
+    else
+      redirect to '/login'
+    end
+  end
+
 
 end

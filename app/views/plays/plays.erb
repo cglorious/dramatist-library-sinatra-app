@@ -61,7 +61,7 @@
       <!-- sort by alpha order -->
       <!-- add option by author -->
       <br>
-      <% @plays.each do |play| %>
+      <% Play.all.each do |play| %>
         <li><%= play.name %></li>
         <% end %>
     </ul>
