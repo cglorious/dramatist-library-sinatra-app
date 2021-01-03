@@ -15,9 +15,7 @@ ActiveRecord::Schema.define(version: 20201231221145) do
 
   create_table "plays", force: :cascade do |t|
     t.string  "name"
-    t.string  "type"
     t.string  "genre"
-    t.integer "cast_total"
     t.text    "synopsis"
     t.integer "playwright_id"
   end

@@ -5,7 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 #send patch, delete, put requests
-use Rack::MethodOveride
+use Rack::MethodOverride
 
 #mount controllers with 'use'
 run ApplicationController
