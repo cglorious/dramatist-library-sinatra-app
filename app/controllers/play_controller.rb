@@ -16,8 +16,6 @@ class PlayController < ApplicationController
         #add error message
         redirect to '/plays/new'
       else
-        #binding.pry
-        #creating a Play
         @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], playwright_id: current_user.id)
         redirect to "/plays/#{@play.id}"
       end
@@ -38,7 +36,7 @@ class PlayController < ApplicationController
   get '/plays/:id/edit' do
     if logged_in?
     @play = Play.find(params[:id])
-      if @play && @play.playwright_id == current_user.id
+      if @play && @play.playwright == current_user
         erb :'plays/edit'
       else
         redirect to '/plays'
@@ -57,10 +55,22 @@ class PlayController < ApplicationController
       elsif params[:name] == @play.name && params[:genre] == @play.genre && params[:synopsis] == @play.genre
         redirect to '/plays'
       else
-        @play.update(name: params[:name], genre: genre[:genre], synopsis: params[:synopsis])
+        @play.update(name: params[:name], genre: params[:genre], synopsis: params[:synopsis])
         @play.save
         redirect to "/plays/#{@play.id}"
       end
+    else
+      redirect to '/login'
+    end
+  end
+
+  delete '/plays/:id' do
+    if logged_in?
+      @play = Play.find(params[:id])
+      if @play && @play.playwright == current_user
+        @play.delete
+      end
+      redirect to '/plays'
     else
       redirect to '/login'
     end

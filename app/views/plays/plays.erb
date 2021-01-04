@@ -1,18 +1,15 @@
-<h1>Here are your plays</h1>
-
 <!doctype html>
 <html>
   <head>
     <title>Plays</title>
     <style>
-      div.welcome {
+      div.welcome, .play-btn-container {
         text-align: center;
       }
       hr.solid {
         border-top: 1px solid #bbb;
       }
-    }
-    .play_btns {
+    .play-btns {
       background-color: #ADD8E6;
       padding: 8px 18px;
       text-align: center;
@@ -24,7 +21,7 @@
       border-radius: 4x;
       transition-duration: 0.4s;
     }
-    .play_btns:hover {
+    .play-btns:hover {
       background-color: #0277bd;
       color: white;
     }
@@ -50,6 +47,7 @@
         </div>
         <% end %>
       </ul>
+      <br>
     <% end %>
 
     <br>
@@ -67,10 +65,11 @@
     </ul>
 
     <hr class="solid">
-    <div>
+    <div class="play-btn-container">
       <!-- edit button styles -->
-      <p><a class="button" href="/plays/new"><button class="play_btns">Add Play</button></a></p>
-      <p><a class="button" href="/logout"><button class="play_btns">Logout</button></a></p>
+      <br>
+      <p><a class="button" href="/plays/new"><button class="play-btns">Add Play</button></a></p>
+      <p><a class="button" href="/logout"><button class="play-btns">Logout</button></a></p>
     </div>
 
   </body>

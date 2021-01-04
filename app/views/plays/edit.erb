@@ -1,1 +1,58 @@
-<h1>Let's edit.</h1>
+<!doctype html>
+<html>
+  <head>
+    <title>Tweets</title>
+    <style>
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+      .edit-btn, .btn-menu {
+        background-color: #ADD8E6;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .edit-btn:hover, .btn-menu:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+      #edit-menu {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+<h2>Edit your play.</h2>
+
+<form action="/plays/<%= @play.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+  <p><label for="name">Name:</label>
+  <input type="text" name="name" value="<%= @play.name %>"></p>
+
+  <p><label for="genre">Genre:</label>
+  <input type="text" name="genre" value="<%= @play.genre %>"></p>
+
+  <p><label for="synopsis">Synopsis:</label>
+  <textarea name="synopsis"><%= @play.synopsis %></textarea></p>
+
+  <p><input class="edit-btn" type="submit" value="Edit Play"></p>
+  <!-- different color for form submit button -->
+</form>
+
+  <div id="edit-menu">
+    <hr class="solid">
+    <br>
+    <a href="/plays"><button class="btn-menu">Home</button></a>
+    <a href="/logout"><button class="btn-menu">Logout</button></a>
+  </div>
+
+</body>
+</html>

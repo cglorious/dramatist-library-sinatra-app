@@ -38,13 +38,14 @@
 
     <div class="btns-container">
     <% if @play.playwright_id == current_user.id %>
+    <!-- edit style of delete and edit play button -->
       <form action="/plays/<%= @play.id %>" method="post">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
-        <p><input class="show-btns" type="submit" value="Delete Tweet"></p>
+        <p><input class="show-btns" type="submit" value="Delete Play"></p>
       </form>
 
       <form action="/plays/<%= @play.id %>/edit" method="get">
-        <p><input class="show-btns" type="submit" value="Edit Tweet"></p>
+        <p><input class="show-btns" type="submit" value="Edit Play"></p>
       </form>
     <% end %>
 
@@ -52,7 +53,7 @@
 
     <div>
       <!-- edit button styles -->
-      <p><a class="button" href="/plays/plays"><button class="show-btns">Home</button></a></p>
+      <p><a class="button" href="/plays"><button class="show-btns">Home</button></a></p>
       <p><a class="button" href="/logout"><button class="show-btns">Logout</button></a></p>
     </div>
     </div>
