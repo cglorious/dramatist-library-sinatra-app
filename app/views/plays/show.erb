@@ -3,15 +3,27 @@
   <head>
     <title>Show Play</title>
     <style>
+      .btns-container {
+        font-size: 14px;
+        text-align: center;
+      }
       hr.solid {
         border-top: 1px solid #bbb;
       }
-      .fwitter_btns {
+      .show-btns {
+        background-color: #ADD8E6;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
         border-radius: 4x;
         transition-duration: 0.4s;
       }
-      .fwitter_btns:hover {
-        background-color: #1DA1F2;
+      .show-btns:hover {
+        background-color: #0277bd;
         color: white;
       }
     </style>
@@ -19,24 +31,30 @@
   <body>
 
     <h4> <%= @play.name %> </h4>
+    <br>
+      <p>Author: <%=@play.playwright.name %></p>
       <p>Genre: <%= @play.genre %></p>
       <p>Synopsis: <%= @play.synopsis %></p>
 
-    <form action="/plays/<%= @play.id %>" method="post">
-      <input id="hidden" type="hidden" name="_method" value="DELETE">
-      <p><input class="fwitter_btns" type="submit" value="Delete Tweet"></p>
-    </form>
+    <div class="btns-container">
+    <% if @play.playwright_id == current_user.id %>
+      <form action="/plays/<%= @play.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <p><input class="show-btns" type="submit" value="Delete Tweet"></p>
+      </form>
 
-    <form action="/plays/<%= @play.id %>/edit" method="get">
-      <p><input class="fwitter_btns" type="submit" value="Edit Tweet"></p>
-    </form>
+      <form action="/plays/<%= @play.id %>/edit" method="get">
+        <p><input class="show-btns" type="submit" value="Edit Tweet"></p>
+      </form>
+    <% end %>
 
     <hr class="solid">
 
     <div>
       <!-- edit button styles -->
-      <p><a class="button" href="/plays/plays"><button class="play_btns">Home</button></a></p>
-      <p><a class="button" href="/logout"><button class="play_btns">Logout</button></a></p>
+      <p><a class="button" href="/plays/plays"><button class="show-btns">Home</button></a></p>
+      <p><a class="button" href="/logout"><button class="show-btns">Logout</button></a></p>
+    </div>
     </div>
 
   </body>
