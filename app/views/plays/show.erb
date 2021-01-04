@@ -1,1 +1,43 @@
-<h1> Here's your new play! </h1>
+<!doctype html>
+<html>
+  <head>
+    <title>Show Play</title>
+    <style>
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+      .fwitter_btns {
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .fwitter_btns:hover {
+        background-color: #1DA1F2;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h4> <%= @play.name %> </h4>
+      <p>Genre: <%= @play.genre %></p>
+      <p>Synopsis: <%= @play.synopsis %></p>
+
+    <form action="/plays/<%= @play.id %>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <p><input class="fwitter_btns" type="submit" value="Delete Tweet"></p>
+    </form>
+
+    <form action="/plays/<%= @play.id %>/edit" method="get">
+      <p><input class="fwitter_btns" type="submit" value="Edit Tweet"></p>
+    </form>
+
+    <hr class="solid">
+
+    <div>
+      <!-- edit button styles -->
+      <p><a class="button" href="/plays/plays"><button class="play_btns">Home</button></a></p>
+      <p><a class="button" href="/logout"><button class="play_btns">Logout</button></a></p>
+    </div>
+
+  </body>
+</html>

@@ -15,8 +15,9 @@ class PlayController < ApplicationController
         #add error message
         redirect to '/plays/new'
       else
-        binding.pry
-        @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], user_id: current_user.id)
+        #binding.pry
+        #creating a Play
+        @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], playwright_id: current_user.id)
         redirect to "/plays/#{@play.id}"
       end
     else
