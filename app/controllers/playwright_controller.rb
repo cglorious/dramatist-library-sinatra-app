@@ -11,7 +11,7 @@ class PlaywrightController < ApplicationController
   post '/login' do
     playwright = Playwright.find_by(email: params[:email])
     if playwright && playwright.authenticate(params[:password])
-      session[:user_id] = user.id
+      session[:user_id] = playwright.id
       redirect to '/plays'
     else
       redirect to '/signup'
