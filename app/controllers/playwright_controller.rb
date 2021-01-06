@@ -4,7 +4,7 @@ class PlaywrightController < ApplicationController
     if !logged_in?
       erb :'playwrights/login'
     else
-      redirect to '/plays'
+      redirect to '/home'
     end
   end
 
@@ -13,7 +13,7 @@ class PlaywrightController < ApplicationController
     if playwright && playwright.authenticate(params[:password])
       session[:user_id] = playwright.id
       if current_user.bio
-        redirect to '/plays'
+        redirect to '/home'
       else
         redirect to '/bio'
       end

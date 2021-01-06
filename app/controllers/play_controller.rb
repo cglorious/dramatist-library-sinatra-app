@@ -1,8 +1,8 @@
 class PlayController < ApplicationController
 
-  get '/plays' do
+  get '/home' do
     @plays = Play.all
-    erb :'plays/plays'
+    erb :'plays/home'
   end
 
   get '/plays/new' do
@@ -47,7 +47,7 @@ class PlayController < ApplicationController
       if @play && @play.playwright == current_user
         erb :'plays/edit'
       else
-        redirect to '/plays'
+        redirect to '/home'
       end
     else
       redirect to '/login'
@@ -77,7 +77,7 @@ class PlayController < ApplicationController
       if @play && @play.playwright == current_user
         @play.delete
       end
-      redirect to '/plays'
+      redirect to '/home'
     else
       redirect to '/login'
     end
