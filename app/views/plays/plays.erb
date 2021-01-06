@@ -9,6 +9,10 @@
       hr.solid {
         border-top: 1px solid #bbb;
       }
+      a.play-link:link {
+        color: #0277bd;
+        background-color: transparent;
+      }
     .play-btns {
       background-color: #ADD8E6;
       padding: 8px 18px;
@@ -34,6 +38,14 @@
     </div>
     <br>
 
+    <!-- test bio conditional -->
+    <h4> All about you. </h4>
+    <br>
+    <p><%= current_user.bio %></p>
+
+    <hr class="solid">
+    <br>
+
     <h4> Here are your plays, <%= current_user.name %>.</h4>
     <br>
 
@@ -43,33 +55,32 @@
       <ul>
         <% current_user.plays.each do |play| %>
         <div>
-          <li><%= play.name %></li>
+          <!-- test routes -->
+          <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
+          <br>
         </div>
         <% end %>
       </ul>
-      <br>
     <% end %>
-    <!-- move "Add Play" button here? -->
 
-    <br>
+    <div class="play-btn-container">
+      <p><a class="button" href="/plays/new"><button class="play-btns">Add Play</button></a></p>
+    </div>
+
     <hr class="solid">
     <br>
     <h4> All Plays by Title </h4>
-    <ul>
-      <!-- add hyperlink for details of plays -->
-      <!-- sort by alpha order -->
-      <!-- add option by author -->
       <br>
+    <ul>
       <% Play.all.each do |play| %>
-        <li><%= play.name %></li>
+        <a class= "play-link" href="/plays/#{play.id}"><li><%= play.name %></li></a>
+        <br>
         <% end %>
     </ul>
 
     <hr class="solid">
     <div class="play-btn-container">
-      <!-- edit button styles -->
       <br>
-      <p><a class="button" href="/plays/new"><button class="play-btns">Add Play</button></a></p>
       <p><a class="button" href="/logout"><button class="play-btns">Logout</button></a></p>
     </div>
 

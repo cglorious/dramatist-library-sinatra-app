@@ -11,9 +11,7 @@ class PlayController < ApplicationController
 
   post '/plays' do
     if logged_in?
-      #ActiveModel::Dirty; _changed? on params
       if params[:name] == "" || params[:genre] == "" || params[:synopsis] == ""
-        #add error message
         redirect to '/plays/new'
       else
         @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], playwright_id: current_user.id)
@@ -51,7 +49,6 @@ class PlayController < ApplicationController
     if logged_in?
       if params[:name] == "" || params[:genre] == "" || params[:synopsis] == ""
         redirect to "/plays/#{params[:id]}/edit"
-      #alternate way to check if params are changed
       elsif params[:name] == @play.name && params[:genre] == @play.genre && params[:synopsis] == @play.genre
         redirect to '/plays'
       else

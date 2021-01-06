@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      .bio-container, .menu-container {
+        text-align: center;
+      }
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+      .btns {
+        background-color: #ADD8E6;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2> All about you. </h2>
+
+
+      <div class="bio-container">
+        <h4> Enter your biography below. </h4>
+        <br>
+        <form class="" action="/bio" method="post">
+          <label for="bio"> Bio: </label>
+          <br>
+          <p><textarea name="bio"></textarea></p>
+          <p><input class= "btns" type= "submit" value="Submit"></p>
+        </form>
+      </div>
+
+      <hr class="solid">
+
+      <div class="menu-container">
+        <br>
+
+        <!-- option to have a skip button -->
+        <a class="button" href="/logout"><button class="btns">Logout</button></a>
+      </div>
+
+    </body>
+</html>
