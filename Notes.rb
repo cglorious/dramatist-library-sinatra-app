@@ -35,23 +35,25 @@
 #         - MVP
 #             - Users can create, edit, and view plays
 #         - Stretch goals
-#             - Incorporate chararacters within a play (play has_many characters)
-#             - Use seed data from Dramatists Play Service, Inc.
-#             - Incorporate pictures of plays in HTML
+#             - User can view list by play or by playwright
+#                 - alphabetical
+#             - Ability to edit profile
+#             - Incorporate profile pictures of plays in HTML
+#             - Incorporate option to change password (with email verification)
 # [x] 5. Corneal Gem
 # [x] 6. GitHub Repo
 # [x] 7. Build models
 #         [x] Migrations
 #         [x] Model classes
 #         [x] Associations
-# [ ] 8. Test models and associations in console
+# [x] 8. Test models and associations in console
 #         - Create seed data
 #         - Adjust migrations (as needed)
 # [x] 9. Create your controllers
-# [ ] 10. Enable 'sessions' in 'ApplicationController'
-# [ ] 11. Build routs and views for login
+# [x] 10. Enable 'sessions' in 'ApplicationController'
+# [x] 11. Build routs and views for login
 #         - Build your 'get' login route + 'login' view
 #         - Build your 'post' login route (authenticate and leverage session hash)
 #         - Build 'user/:id' route + 'show' view
-# [ ] 12. Create 'ApplicationController' helper methods
+# [x] 12. Create 'ApplicationController' helper methods
 #         - checks if user is logged_in

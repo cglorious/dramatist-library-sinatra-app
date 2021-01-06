@@ -23,20 +23,21 @@ class PlaywrightController < ApplicationController
   end
 
   get '/bio' do
+    @playwright = Playwright.find(current_user.id)
     erb :'playwrights/bio'
   end
 
   post '/bio' do
     current_user.update(bio: params[:bio])
     current_user.save
-    redirect to '/plays'
+    redirect to '/home'
   end
 
   get '/signup' do
     if !logged_in?
       erb :'playwrights/signup'
     else
-      redirect to '/plays'
+      redirect to '/home'
     end
   end
 
@@ -50,12 +51,12 @@ class PlaywrightController < ApplicationController
     end
   end
 
-  get '/profile' do
-    erb :'playwrights/profile'
+  get '/settings' do
+    @playwright = Playwright.find(current_user.id)
+    erb :'playwrights/settings'
   end
 
-  patch '/profile' do
-    "Let's edit."
+  patch '/settings' do
     @playwright = Playwright.find(current_user.id)
     if logged_in?
       @playwright.update(name: params[:name], email: params[:email], bio: params[:bio])

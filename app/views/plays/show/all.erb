@@ -42,7 +42,6 @@
   <h4> List of Plays </h4>
     <br>
   <ul>
-    <!-- make list alphabetical -->
     <% Play.all.each do |play| %>
       <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
       <br>

@@ -14,22 +14,22 @@
         color: #0277bd;
         background-color: transparent;
       }
-    .play-btns {
-      background-color: #ADD8E6;
-      padding: 2px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 4x;
-      transition-duration: 0.4s;
-    }
-    .play-btns:hover {
-      background-color: #0277bd;
-      color: white;
-    }
+      .bio-btns {
+        padding: 2px 12px;
+        background-color: #ADD8E6;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .bio-btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
     #show-menu {
       text-align: center;
     }
@@ -56,16 +56,20 @@
 
     <h4>Biography</h4>
     <br>
-    <% if @playwright.bio %>
+    <!-- check biography conditional - Ex: William Harper Jackson -->
+    <% if @playwright.bio == nil || @playwright.bio == "" %>
+      <% if @playwright == current_user %>
+        <p>It looks like you do not have a biography.</p>
+        <% else %>
+        <p><%= @playwright.name %> does not have a biography.</p>
+        <% end %>
+    <%else%>
       <p><%= @playwright.bio %></p>
-    <% else %>
-      <p><%= @playwright.name %> does not have a biography.</p>
     <% end %>
 
     <% if @playwright.bio == current_user.bio %>
-      <p>Edit bio here</p>
+      <a class="button" href="/bio"><button class="bio-btns">Edit Bio</button></a>
     <% end %>
-    <!-- add/edit bio option if current_user -->
 
     <hr class="solid">
     <br>
@@ -73,7 +77,11 @@
       <h4>Plays by <%= @playwright.name %></h4>
       <br>
       <% if @playwright.plays.count == 0 %>
-        <p><%= @playwright.name %> does not have any plays in the library.</p>
+          <% if @playwright == current_user %>
+            <p>It looks like you do not have any plays in the library.</p>
+            <% else %>
+            <p><%= @playwright.name %> does not have any plays in the library.</p>
+            <% end %>
       <% else %>
         <ul>
           <% @playwright.plays.each do |play| %>
@@ -84,7 +92,7 @@
       <% end %>
 
       <% if @playwright == current_user %>
-        <p>Add play here</p>
+        <a class="button" href="/plays/new"><button class="bio-btns">Add Play</button></a>
       <% end %>
       <!-- add option to add play if current_user -->
 
