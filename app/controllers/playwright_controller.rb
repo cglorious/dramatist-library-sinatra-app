@@ -54,6 +54,18 @@ class PlaywrightController < ApplicationController
     erb :'playwrights/profile'
   end
 
+  patch '/profile' do
+    "Let's edit."
+    @playwright = Playwright.find(current_user.id)
+    if logged_in?
+      @playwright.update(name: params[:name], email: params[:email], bio: params[:bio])
+      @playwright.save
+      redirect to '/home'
+    else
+      erb :'playwrights/login'
+    end
+  end
+
   get '/playwrights/show/all' do
     erb :'playwrights/show/all'
   end

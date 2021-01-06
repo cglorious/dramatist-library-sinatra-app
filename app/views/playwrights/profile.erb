@@ -1,1 +1,81 @@
-<p>You can edit your profile here in profile.erb.</p>
+
+<!doctype html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+      .profile-label {
+        font-size: 14px;
+      }
+      .btns {
+        background-color: #ADD8E6;
+        padding: 2px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+      #profile-menu {
+        text-align: center;
+      }
+      .menu-btns {
+        background-color: #C0C0C0;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .menu-btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+    </style>
+  </head>
+<body>
+<h2> Edit your profile here. <h2>
+<br>
+  <div id="profile-wrapper">
+    <form class="" action="/profile" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+        <p><label class="profile-label" for="name">Name:</label>
+        <input type= "text" name="name" value= <%= current_user.name %>></p>
+        <!-- only shows first name -->
+
+        <p><label class="profile-label" for="email">Email:</label>
+        <input type= "text" name="email" value= <%= current_user.email %> ></p>
+
+        <label class="profile-label" for="bio">Biography:</label>
+        <p><textarea name="bio" value="" rows="4" cols="50"> <%= current_user.bio %> </textarea></p>
+
+      <!-- change password option? -->
+
+        <input class= "btns" type= "submit" value="Edit Profile">
+      </form>
+
+    <div id="profile-menu">
+      <hr class="solid">
+      <br>
+      <a href="/home"><button class="menu-btns">Home</button></a>
+      <a href="/logout"><button class="menu-btns">Logout</button></a>
+    </div>
+
+  </div>
+  </body>
+</html>
