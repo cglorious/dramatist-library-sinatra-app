@@ -22,9 +22,9 @@ class PlayController < ApplicationController
     end
   end
 
-  get '/more' do
-    #binding.pry
-    erb: ''
+  get '/plays/more/:id' do
+    @play = Play.find(params[:id])
+    erb :'plays/more'
   end
 
   get '/plays/:id' do
