@@ -56,24 +56,36 @@
 
     <h4>Biography</h4>
     <br>
-    <p><%= @playwright.bio %></p>
+    <% if @playwright.bio %>
+      <p><%= @playwright.bio %></p>
+    <% else %>
+      <p><%= @playwright.name %> does not have a biography.</p>
+    <% end %>
 
-    <!-- edit bio option if current_user -->
-    <!-- conditional if bio doesn't exist -->
+    <% if @playwright.bio == current_user.bio %>
+      <p>Edit bio here</p>
+    <% end %>
+    <!-- add/edit bio option if current_user -->
 
     <hr class="solid">
     <br>
 
       <h4>Plays by <%= @playwright.name %></h4>
       <br>
-      <ul>
-        <% @playwright.plays.each do |play| %>
-        <a class="play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
-        <br>
-        <% end %>
-      </ul>
+      <% if @playwright.plays.count == 0 %>
+        <p><%= @playwright.name %> does not have any plays in the library.</p>
+      <% else %>
+        <ul>
+          <% @playwright.plays.each do |play| %>
+          <a class="play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
+          <br>
+          <% end %>
+        </ul>
+      <% end %>
 
-      <!-- conditional if there are no plays -->
+      <% if @playwright == current_user %>
+        <p>Add play here</p>
+      <% end %>
       <!-- add option to add play if current_user -->
 
       <div id="show-menu">

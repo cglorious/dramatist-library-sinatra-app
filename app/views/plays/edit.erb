@@ -45,30 +45,30 @@
   </head>
   <body>
 
-<h2>Edit your play.</h2>
+    <h2>Edit your play.</h2>
 
-<form action="/plays/<%= @play.id %>" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <form action="/plays/<%= @play.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-  <p><label for="name">Name:</label>
-  <input type="text" name="name" value="<%= @play.name %>"></p>
+        <p><label for="name">Name:</label>
+        <input type="text" name="name" value="<%= @play.name %>"></p>
 
-  <p><label for="genre">Genre:</label>
-  <input type="text" name="genre" value="<%= @play.genre %>"></p>
+        <p><label for="genre">Genre:</label>
+        <input type="text" name="genre" value="<%= @play.genre %>"></p>
 
-  <p><label for="synopsis">Synopsis:</label>
-  <textarea name="synopsis"><%= @play.synopsis %></textarea></p>
+        <p><label for="synopsis">Synopsis:</label>
+        <textarea name="synopsis"><%= @play.synopsis %></textarea></p>
 
-  <p><input class="edit-btn" type="submit" value="Edit Play"></p>
+        <p><input class="edit-btn" type="submit" value="Edit Play"></p>
 
-</form>
+      </form>
 
-  <div id="edit-menu">
-    <hr class="solid">
-    <br>
-    <a href="/home"><button class="menu-btns">Home</button></a>
-    <a href="/logout"><button class="menu-btns">Logout</button></a>
-  </div>
+      <div id="edit-menu">
+        <hr class="solid">
+        <br>
+        <a href="/home"><button class="menu-btns">Home</button></a>
+        <a href="/logout"><button class="menu-btns">Logout</button></a>
+      </div>
 
-</body>
+  </body>
 </html>

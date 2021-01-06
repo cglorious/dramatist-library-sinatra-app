@@ -28,17 +28,15 @@
       }
     </style>
   </head>
-<body>
-  <h2> Written by <%= @playwright.name %> </h2>
-
-  <br>
-    <!-- Iterate through plays -->
-  <% @playwright.plays.each do |play| %>
-    <p>Title: <%= play.name %> </p>
-    <p>Genre: <%= play.genre %></p>
-    <p>Synopsis: <%= play.synopsis %></p>
+  <body>
+    <h2> Written by <%= @playwright.name %> </h2>
     <br>
-  <% end %>
+    <% @playwright.plays.each do |play| %>
+      <p>Title: <%= play.name %> </p>
+      <p>Genre: <%= play.genre %></p>
+      <p>Synopsis: <%= play.synopsis %></p>
+      <br>
+      <% end %>
 
     <hr class="solid">
 

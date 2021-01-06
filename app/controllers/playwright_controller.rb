@@ -50,6 +50,10 @@ class PlaywrightController < ApplicationController
     end
   end
 
+  get '/profile' do
+    erb :'playwrights/profile'
+  end
+
   get '/playwrights/show/all' do
     erb :'playwrights/show/all'
   end
