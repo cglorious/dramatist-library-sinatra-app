@@ -6,8 +6,27 @@
       hr.solid {
         border-top: 1px solid #bbb;
       }
-      .edit-btn, .btn-menu {
+      .edit-btn {
         background-color: #ADD8E6;
+        padding: 2px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .edit-btn:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+      #edit-menu {
+        text-align: center;
+      }
+      .menu-btns {
+        background-color: #C0C0C0;
         padding: 8px 18px;
         text-align: center;
         text-decoration: none;
@@ -18,12 +37,9 @@
         border-radius: 4x;
         transition-duration: 0.4s;
       }
-      .edit-btn:hover, .btn-menu:hover {
+      .menu-btns:hover {
         background-color: #0277bd;
         color: white;
-      }
-      #edit-menu {
-        text-align: center;
       }
     </style>
   </head>
@@ -50,8 +66,8 @@
   <div id="edit-menu">
     <hr class="solid">
     <br>
-    <a href="/plays"><button class="btn-menu">Home</button></a>
-    <a href="/logout"><button class="btn-menu">Logout</button></a>
+    <a href="/plays"><button class="menu-btns">Home</button></a>
+    <a href="/logout"><button class="menu-btns">Logout</button></a>
   </div>
 
 </body>

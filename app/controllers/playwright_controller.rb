@@ -23,7 +23,7 @@ class PlaywrightController < ApplicationController
   end
 
   get '/bio' do
-    erb :'playwright/bio'
+    erb :'playwrights/bio'
   end
 
   post '/bio' do
@@ -46,7 +46,7 @@ class PlaywrightController < ApplicationController
     else
       @playwright = Playwright.create(name: params[:name], email: params[:email], password: params[:password])
       session[:user_id] = @playwright.id
-      redirect to '/plays'
+      redirect to '/bio'
     end
   end
 

@@ -3,7 +3,7 @@
   <head>
     <title>Plays</title>
     <style>
-      div.welcome, .play-btn-container {
+      div.welcome {
         text-align: center;
       }
       hr.solid {
@@ -15,7 +15,7 @@
       }
     .play-btns {
       background-color: #ADD8E6;
-      padding: 8px 18px;
+      padding: 2px 12px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -26,6 +26,22 @@
       transition-duration: 0.4s;
     }
     .play-btns:hover {
+      background-color: #0277bd;
+      color: white;
+    }
+    .menu-btns {
+      background-color: #C0C0C0;
+      padding: 8px 18px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4x;
+      transition-duration: 0.4s;
+    }
+    .menu-btns:hover {
       background-color: #0277bd;
       color: white;
     }
@@ -50,15 +66,17 @@
     <br>
 
     <% if current_user.plays.count == 0 %>
-      <%= "Oh snap! It looks like you don't have any plays." %>
+      <p> Oh snap! It looks like you don't have any plays.
+      <br>
+      Click <em><strong>Add Play</strong></em> to add a new play. </p>
     <% else %>
       <ul>
         <% current_user.plays.each do |play| %>
         <div>
-          <!-- test routes -->
-          <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
           <br>
+          <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
         </div>
+          <br>
         <% end %>
       </ul>
     <% end %>
@@ -72,6 +90,8 @@
     <h4> All Plays by Title </h4>
       <br>
     <ul>
+      <!-- make list alphabetical -->
+      <!-- test routes -->
       <% Play.all.each do |play| %>
         <a class= "play-link" href="/plays/#{play.id}"><li><%= play.name %></li></a>
         <br>
@@ -81,7 +101,7 @@
     <hr class="solid">
     <div class="play-btn-container">
       <br>
-      <p><a class="button" href="/logout"><button class="play-btns">Logout</button></a></p>
+      <p><a class="button" href="/logout"><button class="menu-btns">Logout</button></a></p>
     </div>
 
   </body>

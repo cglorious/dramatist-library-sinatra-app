@@ -4,7 +4,7 @@
   <head>
     <title>Login</title>
     <style>
-      .bio-container, .menu-container {
+      .menu-container {
         text-align: center;
       }
       hr.solid {
@@ -12,7 +12,7 @@
       }
       .btns {
         background-color: #ADD8E6;
-        padding: 8px 18px;
+        padding: 2px 12px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -23,6 +23,22 @@
         transition-duration: 0.4s;
       }
       .btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+      .menu-btns {
+        background-color: #C0C0C0;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .menu-btns:hover {
         background-color: #0277bd;
         color: white;
       }
@@ -49,7 +65,7 @@
         <br>
 
         <!-- option to have a skip button -->
-        <a class="button" href="/logout"><button class="btns">Logout</button></a>
+        <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
       </div>
 
     </body>
