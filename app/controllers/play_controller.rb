@@ -22,6 +22,11 @@ class PlayController < ApplicationController
     end
   end
 
+  get '/more' do
+    #binding.pry
+    erb: ''
+  end
+
   get '/plays/:id' do
     if logged_in?
       @play = Play.find(params[:id])

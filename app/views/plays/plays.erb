@@ -3,13 +3,18 @@
   <head>
     <title>Plays</title>
     <style>
-      div.welcome {
+      #plays-welcome{
+        color: #C0C0C0;
         text-align: center;
       }
       hr.solid {
         border-top: 1px solid #bbb;
       }
       a.play-link:link {
+        color: #0277bd;
+        background-color: transparent;
+      }
+      a.play-link:visited {
         color: #0277bd;
         background-color: transparent;
       }
@@ -28,6 +33,9 @@
     .play-btns:hover {
       background-color: #0277bd;
       color: white;
+    }
+    #new-menu {
+      text-align: center;
     }
     .menu-btns {
       background-color: #C0C0C0;
@@ -49,59 +57,55 @@
   </head>
   <body>
 
-    <div class="welcome">
-      <h4><em> Hello, <%= current_user.name %>!</em></h4>
-    </div>
+    <h2>Welcome to your library.</h2>
+    <h4 id="plays-welcome"> Hello, <%= current_user.name %>! <h4>
     <br>
-
-    <!-- test bio conditional -->
-    <h4> All about you. </h4>
+    <!-- edit bio option -->
+    <% if current_user.bio == nil || "" %>
+      <h4> Let's get acquainted! </h4>
+      <p>It looks like you don't have a biography.
+      <br>
+      Click <em><strong>Add Bio</strong></em> to add your biography.</p>
+      <p><a class="button" href="/bio"><button class="play-btns">Add Bio</button></a></p>
+    <% else %>
+      <h4> All about you. </h4>
+      <br>
+      <p><%= current_user.bio %></p>
+    <% end %>
     <br>
-    <p><%= current_user.bio %></p>
-
-    <hr class="solid">
-    <br>
-
-    <h4> Here are your plays, <%= current_user.name %>.</h4>
-    <br>
-
     <% if current_user.plays.count == 0 %>
-      <p> Oh snap! It looks like you don't have any plays.
+      <h4>Oh snap!</h4>
+      <p> It looks like you don't have any plays.
       <br>
       Click <em><strong>Add Play</strong></em> to add a new play. </p>
     <% else %>
+      <h4> Here are your plays, <%= current_user.name %>.</h4>
       <ul>
         <% current_user.plays.each do |play| %>
-        <div>
-          <br>
           <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
-        </div>
-          <br>
         <% end %>
       </ul>
     <% end %>
 
-    <div class="play-btn-container">
-      <p><a class="button" href="/plays/new"><button class="play-btns">Add Play</button></a></p>
-    </div>
-
+    <p><a class="button" href="/plays/new"><button class="play-btns">Add Play</button></a></p>
+    <br>
     <hr class="solid">
     <br>
     <h4> All Plays by Title </h4>
       <br>
     <ul>
       <!-- make list alphabetical -->
-      <!-- test routes -->
       <% Play.all.each do |play| %>
-        <a class= "play-link" href="/plays/#{play.id}"><li><%= play.name %></li></a>
+        <!-- unable to route to play -->
+        <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
         <br>
         <% end %>
     </ul>
 
-    <hr class="solid">
-    <div class="play-btn-container">
+    <div id="new-menu">
+      <hr class="solid">
       <br>
-      <p><a class="button" href="/logout"><button class="menu-btns">Logout</button></a></p>
+      <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
     </div>
 
   </body>

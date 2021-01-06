@@ -3,10 +3,6 @@
   <head>
     <title>Show Play</title>
     <style>
-      #menu-container {
-        font-size: 14px;
-        text-align: center;
-      }
       hr.solid {
         border-top: 1px solid #bbb;
       }
@@ -25,6 +21,10 @@
       .show-btns:hover {
         background-color: #0277bd;
         color: white;
+      }
+      #show-menu {
+        font-size: 14px;
+        text-align: center;
       }
       .menu-btns {
         background-color: #C0C0C0;
@@ -49,12 +49,12 @@
     <h4> <%= @play.name %> </h4>
     <br>
       <p>Author: <%=@play.playwright.name %></p>
+      <!-- add page to show playwrights and their plays -->
       <p>Genre: <%= @play.genre %></p>
       <p>Synopsis: <%= @play.synopsis %></p>
 
     <div>
     <% if @play.playwright_id == current_user.id %>
-    <!-- edit style of delete and edit play button -->
       <form action="/plays/<%= @play.id %>/edit" method="get">
         <input class="show-btns" type="submit" value="Edit Play">
       </form>
@@ -66,10 +66,11 @@
     <% end %>
     </div>
 
+    <a href="/more">More by <%= @play.playwright.name %></a>
+
     <hr class="solid">
 
-    <div id="menu-container">
-      <!-- edit button styles -->
+    <div id="show-menu">
       <br>
       <a class="button" href="/plays"><button class="menu-btns">Home</button></a>
       <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>

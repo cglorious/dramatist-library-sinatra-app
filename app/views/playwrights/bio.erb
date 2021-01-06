@@ -26,6 +26,9 @@
         background-color: #0277bd;
         color: white;
       }
+      #bio-menu {
+        text-align: center;
+      }
       .menu-btns {
         background-color: #C0C0C0;
         padding: 8px 18px;
@@ -45,26 +48,22 @@
     </style>
   </head>
   <body>
-    <h2> All about you. </h2>
+    <h2> Enter your biography. </h2>
 
 
       <div class="bio-container">
-        <h4> Enter your biography below. </h4>
-        <br>
         <form class="" action="/bio" method="post">
-          <label for="bio"> Bio: </label>
+          <label for="bio"> Biography: </label>
           <br>
-          <p><textarea name="bio"></textarea></p>
+          <p><textarea name="bio" value="" rows="4" cols="50"></textarea></p>
           <p><input class= "btns" type= "submit" value="Submit"></p>
         </form>
       </div>
 
       <hr class="solid">
 
-      <div class="menu-container">
+      <div id="bio-menu">
         <br>
-
-        <!-- option to have a skip button -->
         <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
       </div>
 
