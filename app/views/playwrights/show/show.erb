@@ -58,7 +58,8 @@
     <br>
     <p><%= @playwright.bio %></p>
 
-    <!-- edit bio option -->
+    <!-- edit bio option if current_user -->
+    <!-- conditional if bio doesn't exist -->
 
     <hr class="solid">
     <br>
@@ -71,6 +72,9 @@
         <br>
         <% end %>
       </ul>
+
+      <!-- conditional if there are no plays -->
+      <!-- add option to add play if current_user -->
 
       <div id="show-menu">
         <hr class="solid">

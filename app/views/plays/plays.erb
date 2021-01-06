@@ -99,36 +99,16 @@
     <div id="nav">
       <hr class="solid">
       <br>
+      <p> To view a list of the library's playwrights and plays, choose an option below. </p>
       <a class="button" href="/plays/show/all"><button class="nav-btns">Plays</button></a>
       <a class="button" href="/playwrights/show/all"><button class="nav-btns">Playwrights</button></a>
     </div>
       <br>
-    <hr class="solid">
-    <br>
-
-    <h4> List of Plays </h4>
-      <br>
-    <ul>
-      <!-- make list alphabetical -->
-      <% Play.all.each do |play| %>
-        <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
-        <br>
-        <% end %>
-    </ul>
-    <hr class="solid">
-    <br>
-    <h4> List of Playwrights </h4>
-      <br>
-    <ul>
-      <% Playwright.all.each do |playwright| %>
-        <a class="playwright-link" href="/playwrights/<%= playwright.id %>"><li><%= playwright.name %></li></a>
-        <br>
-        <% end %>
-    </ul>
 
     <div id="play-menu">
       <hr class="solid">
       <br>
+      <!-- Edit profile feature -->
       <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
     </div>
 
