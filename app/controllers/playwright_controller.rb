@@ -50,6 +50,10 @@ class PlaywrightController < ApplicationController
     end
   end
 
+  get '/playwrights/show/all' do
+    erb :'playwrights/show/all'
+  end
+
   get '/playwrights/:id' do
     @playwright = Playwright.find(params[:id])
     erb :'/playwrights/show/show'

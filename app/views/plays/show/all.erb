@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Plays</title>
+    <style>
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+      .play-link:link {
+        color: #0277bd;
+        background-color: transparent;
+      }
+      .play-link:visited {
+        color: #0277bd;
+        background-color: transparent;
+      }
+      #all-menu {
+        text-align: center;
+      }
+      .menu-btns {
+        background-color: #C0C0C0;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .menu-btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+  <h2> Plays </h2>
+
+  <h4> List of Plays </h4>
+    <br>
+  <ul>
+    <!-- make list alphabetical -->
+    <% Play.all.each do |play| %>
+      <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
+      <br>
+      <% end %>
+  </ul>
+
+  <div id="all-menu">
+    <hr class="solid">
+    <br>
+    <a class="button" href="/plays"><button class="menu-btns">Home</button></a>
+    <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
+    </div>
+  </body>
+</html>

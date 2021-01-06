@@ -22,6 +22,10 @@ class PlayController < ApplicationController
     end
   end
 
+  get '/plays/show/all' do
+    erb :'plays/show/all'
+  end
+
   get '/plays/:id' do
     if logged_in?
       @play = Play.find(params[:id])

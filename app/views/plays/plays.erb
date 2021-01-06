@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Plays</title>
+    <title>Home</title>
     <style>
       #plays-welcome{
         color: #C0C0C0;
@@ -19,8 +19,13 @@
         background-color: transparent;
       }
     .play-btns {
-      background-color: #ADD8E6;
       padding: 2px 12px;
+    }
+    .nav-btns {
+      padding: 8px 18px;
+    }
+    .play-btns, .nav-btns {
+      background-color: #ADD8E6;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -30,11 +35,11 @@
       border-radius: 4x;
       transition-duration: 0.4s;
     }
-    .play-btns:hover {
+    .play-btns:hover, .nav-btns:hover {
       background-color: #0277bd;
       color: white;
     }
-    #new-menu {
+    #play-menu, #nav {
       text-align: center;
     }
     .menu-btns {
@@ -90,7 +95,14 @@
     <% end %>
 
     <p><a class="button" href="/plays/new"><button class="play-btns">Add Play</button></a></p>
-    <br>
+
+    <div id="nav">
+      <hr class="solid">
+      <br>
+      <a class="button" href="/plays/show/all"><button class="nav-btns">Plays</button></a>
+      <a class="button" href="/playwrights/show/all"><button class="nav-btns">Playwrights</button></a>
+    </div>
+      <br>
     <hr class="solid">
     <br>
 
@@ -114,7 +126,7 @@
         <% end %>
     </ul>
 
-    <div id="new-menu">
+    <div id="play-menu">
       <hr class="solid">
       <br>
       <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
