@@ -24,6 +24,7 @@ class PlayController < ApplicationController
 
   get '/plays/more/:id' do
     @play = Play.find(params[:id])
+    @playwright = Playwright.find(@play.playwright_id)
     erb :'plays/more'
   end
 

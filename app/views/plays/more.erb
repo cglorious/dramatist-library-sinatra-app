@@ -1,7 +1,52 @@
-<h2> Written by <%= @play.playwright.name %> </h2>
+<!doctype html>
+<html>
+  <head>
+    <title>More plays by <%= @playwright.name %></title>
+    <style>
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+      #more-menu {
+        font-size: 14px;
+        text-align: center;
+      }
+      .more-btns {
+        background-color: #C0C0C0;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4x;
+        transition-duration: 0.4s;
+      }
+      .more-btns:hover {
+        background-color: #0277bd;
+        color: white;
+      }
+    </style>
+  </head>
+<body>
+  <h2> Written by <%= @playwright.name %> </h2>
 
-<br>
-  <p>Author: <%=@play.playwright.name %></p>
-  <!-- add page to show playwrights and their plays -->
-  <p>Genre: <%= @play.genre %></p>
-  <p>Synopsis: <%= @play.synopsis %></p>
+  <br>
+    <!-- Iterate through plays -->
+  <% @playwright.plays.each do |play| %>
+    <p>Name: <%= play.name %> </p>
+    <p>Genre: <%= play.genre %></p>
+    <p>Synopsis: <%= play.synopsis %></p>
+    <br>
+  <% end %>
+
+    <hr class="solid">
+
+    <div id="more-menu">
+      <br>
+      <a class="button" href="/plays"><button class="more-btns">Home</button></a>
+      <a class="button" href="/logout"><button class="more-btns">Logout</button></a>
+    </div>
+
+  </body>
+</html>

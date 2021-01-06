@@ -12,10 +12,10 @@ class PlaywrightController < ApplicationController
     playwright = Playwright.find_by(email: params[:email])
     if playwright && playwright.authenticate(params[:password])
       session[:user_id] = playwright.id
-      if params[:bio] = nil || ""
-        redirect to '/bio'
-      else
+      if current_user.bio
         redirect to '/plays'
+      else
+        redirect to '/bio'
       end
     else
       redirect to '/signup'
