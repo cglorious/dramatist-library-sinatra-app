@@ -52,7 +52,7 @@ class PlaywrightController < ApplicationController
 
   get '/playwrights/:id' do
     @playwright = Playwright.find(params[:id])
-    erb :'/playwrights/show'
+    erb :'/playwrights/show/show'
   end
 
   get '/logout' do

@@ -60,26 +60,25 @@
       <p>Genre: <%= @play.genre %></p>
       <p>Synopsis: <%= @play.synopsis %></p>
 
-    <div>
-    <% if @play.playwright_id == current_user.id %>
-      <form action="/plays/<%= @play.id %>/edit" method="get">
-        <input class="show-btns" type="submit" value="Edit Play">
-      </form>
+    <div id="show-conditional">
+      <% if @play.playwright_id == current_user.id %>
+        <form action="/plays/<%= @play.id %>/edit" method="get">
+          <input class="show-btns" type="submit" value="Edit Play">
+        </form>
 
-      <form action="/plays/<%= @play.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="DELETE">
-        <input class="show-btns" type="submit" value="Delete Play">
-      </form>
-    <% end %>
+        <form action="/plays/<%= @play.id %>" method="post">
+          <input id="hidden" type="hidden" name="_method" value="DELETE">
+          <input class="show-btns" type="submit" value="Delete Play">
+        </form>
+        <% end %>
+      <br>
     </div>
 
-    <!-- adjust visited link -->
-    <a class= "more-link" href="/plays/more/<%= @play.id %>">More by <%= @play.playwright.name %></a>
-
+    <p><a class= "more-link" href="/plays/more/<%= @play.id %>">More by <%= @play.playwright.name %></a></p>
+    <br>
     <hr class="solid">
-
+    <br>
     <div id="show-menu">
-      <br>
       <a class="button" href="/plays"><button class="menu-btns">Home</button></a>
       <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
     </div>
