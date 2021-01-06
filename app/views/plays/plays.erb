@@ -10,11 +10,11 @@
       hr.solid {
         border-top: 1px solid #bbb;
       }
-      a.play-link:link {
+      .play-link:link, .playwright-link:link {
         color: #0277bd;
         background-color: transparent;
       }
-      a.play-link:visited {
+      .play-link:visited, .playwright-link:visited  {
         color: #0277bd;
         background-color: transparent;
       }
@@ -60,7 +60,7 @@
     <h2>Welcome to your library.</h2>
     <h4 id="plays-welcome"> Hello, <%= current_user.name %>! <h4>
     <br>
-    <!-- edit bio option -->
+
     <% if current_user.bio %>
       <h4> All about you. </h4>
       <br>
@@ -108,9 +108,7 @@
       <br>
     <ul>
       <% Playwright.all.each do |playwright| %>
-        <!-- add links to author information, including editing profile if it's you -->
-        <!-- <a class= "playwright-link" href="/plays/play.id %>"><li>play.name %></li></a> -->
-        <li><%= playwright.name %></li>
+        <a class="playwright-link" href="/playwrights/<%= playwright.id %>"><li><%= playwright.name %></li></a>
         <br>
         <% end %>
     </ul>

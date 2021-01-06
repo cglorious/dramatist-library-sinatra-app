@@ -50,6 +50,11 @@ class PlaywrightController < ApplicationController
     end
   end
 
+  get '/playwrights/:id' do
+    @playwright = Playwright.find(params[:id])
+    erb :'/playwrights/show'
+  end
+
   get '/logout' do
     if logged_in?
       session.destroy

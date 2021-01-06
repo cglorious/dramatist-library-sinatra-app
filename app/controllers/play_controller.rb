@@ -22,12 +22,6 @@ class PlayController < ApplicationController
     end
   end
 
-  get '/plays/more/:id' do
-    @play = Play.find(params[:id])
-    @playwright = Playwright.find(@play.playwright_id)
-    erb :'plays/more'
-  end
-
   get '/plays/:id' do
     if logged_in?
       @play = Play.find(params[:id])
@@ -35,6 +29,12 @@ class PlayController < ApplicationController
     else
       redirect to '/login'
     end
+  end
+
+  get '/plays/more/:id' do
+    @play = Play.find(params[:id])
+    @playwright = Playwright.find(@play.playwright_id)
+    erb :'plays/more'
   end
 
   get '/plays/:id/edit' do
