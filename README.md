@@ -1,16 +1,16 @@
 ## The Dramatist Library
 
-Welcome to The Dramatist Library! This app is intended for playwrights and theater enthusiasts as a method to store a collection of plays. The inspiration for this app is stems from multiple visits to The Drama Book Shop in New York City.
+Welcome to The Dramatist Library! This app is intended for playwrights and theater enthusiasts to use to store a collection of plays. The inspiration for this app is stems from multiple visits to The Drama Book Shop in New York City.
 
 ## Installation
 
-To run The Dramatist Library, clone this repo:
+To run, clone this repo:
 
   `$ git clone https://github.com/cglorious/dramatist-library-sinatra-app`
 
 ## Usage
 
-Once cloned to your local environment, run the following terminal commands:
+Once cloned, run the following terminal commands:
 
   `$ cd dramatist-library-sinatra-app`
 
@@ -20,15 +20,13 @@ And then execute:
 
 Open your browser at http://localhost:9393/
 
-To start the application, select 'Signup' or 'Login'
-
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. You can run `tux` for an interactive prompt that will allow you to experiment. Use `rake` to create tasks.
 
 ## Contributing
 
-Open to suggestions Additional feature requests are listed in [Notes.md](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/Notes.md).
+Additional feature requests and known bugs are listed in [Notes.md](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/Notes.md).
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/cglorious/dramatist-library-sinatra-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/CODE_OF_CONDUCT.md).
 
