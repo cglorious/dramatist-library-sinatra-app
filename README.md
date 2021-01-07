@@ -12,11 +12,11 @@ To run The Dramatist Library, clone this repo:
 
 Once cloned to your local environment, run the following terminal commands:
 
-  $ cd dramatist-library-sinatra-app
+  `$ cd dramatist-library-sinatra-app`
 
 And then execute:
 
-  $ shotgun
+  `$ shotgun`
 
 Open your browser at http://localhost:9393/
 
@@ -28,7 +28,7 @@ After checking out the repo, run `bundle install` to install dependencies. You c
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/cglorious/dramatist-library-sinatra-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct]().
+Bug reports and pull requests are welcome on GitHub at https://github.com/cglorious/dramatist-library-sinatra-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/CODE_OF_CONDUCT.md).
 
 ## Demo Video
 
@@ -40,4 +40,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the The Dramatist Library project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct]().
+Everyone interacting in the The Dramatist Library project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/CODE_OF_CONDUCT.md).
