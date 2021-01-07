@@ -6,7 +6,7 @@ Welcome to The Dramatist Library! This app is intended for playwrights and theat
 
 To run The Dramatist Library, clone this repo:
 
-  `git clone` https://github.com/cglorious/dramatist-library-sinatra-app
+  `$ git clone https://github.com/cglorious/dramatist-library-sinatra-app`
 
 ## Usage
 
