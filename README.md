@@ -30,10 +30,6 @@ Additional feature requests and known bugs are listed in [Notes.md](https://gith
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/cglorious/dramatist-library-sinatra-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/CODE_OF_CONDUCT.md).
 
-## Demo Video
-
-[Walkthrough video]()
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
