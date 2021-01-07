@@ -28,6 +28,8 @@ After checking out the repo, run `bundle install` to install dependencies. You c
 
 ## Contributing
 
+Open to suggestions Additional feature requests are listed in [Notes.md](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/Notes.md).
+
 Bug reports and pull requests are welcome on GitHub at https://github.com/cglorious/dramatist-library-sinatra-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/cglorious/dramatist-library-sinatra-app/blob/main/CODE_OF_CONDUCT.md).
 
 ## Demo Video
