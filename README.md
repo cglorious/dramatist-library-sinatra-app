@@ -1,6 +1,6 @@
 ## The Dramatist Library
 
-Welcome to The Dramatist Library! This app is intended for playwrights and theater enthusiasts to use to store a collection of plays. The inspiration for this app is stems from multiple visits to The Drama Book Shop in New York City.
+Welcome to The Dramatist Library! This app is intended for playwrights and theater enthusiasts to use to store a collection of plays. The inspiration for this app stems from multiple visits to The Drama Book Shop in New York City.
 
 ## Installation
 
