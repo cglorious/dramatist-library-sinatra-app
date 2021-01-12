@@ -56,16 +56,7 @@
 
     <h4>Biography</h4>
     <br>
-    <!-- check biography conditional - Ex: William Harper Jackson -->
-    <% if @playwright.bio == nil || @playwright.bio == "" %>
-      <% if @playwright == current_user %>
-        <p>It looks like you do not have a biography.</p>
-        <% else %>
-        <p><%= @playwright.name %> does not have a biography.</p>
-        <% end %>
-    <%else%>
       <p><%= @playwright.bio %></p>
-    <% end %>
 
     <% if @playwright.bio == current_user.bio %>
       <a class="button" href="/bio"><button class="bio-btns">Edit Bio</button></a>
