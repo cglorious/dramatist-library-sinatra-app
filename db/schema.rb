@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201231221145) do
+ActiveRecord::Schema.define(version: 20210112215616) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "plays", force: :cascade do |t|
     t.string  "name"
     t.string  "genre"
     t.text    "synopsis"
     t.integer "playwright_id"
+    t.integer "category_id"
   end
 
   create_table "playwrights", force: :cascade do |t|

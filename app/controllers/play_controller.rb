@@ -1,6 +1,7 @@
 class PlayController < ApplicationController
 
   get '/home' do
+    #within the Playwright
     @plays = Play.all
     erb :'plays/home'
   end
@@ -11,18 +12,26 @@ class PlayController < ApplicationController
 
   post '/plays' do
     if logged_in?
-      if params[:name] == "" || params[:genre] == "" || params[:synopsis] == ""
-        redirect to '/plays/new'
-      else
-        @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], playwright_id: current_user.id)
+      @play = current_user.plays.build(name: params[:name], genre: params[:genre], synopsis: params[:synopsis])
+      if @play.save
         redirect to "/plays/#{@play.id}"
+      else
+        erb :'plays/new'
       end
+
+      #if params[:name] == "" || params[:genre] == "" || params[:synopsis] == ""
+      #  redirect to '/plays/new'
+      #else
+      #  @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], playwright_id: current_user.id)
+      #  redirect to "/plays/#{@play.id}"
+      #end
     else
       redirect to '/login'
     end
   end
 
   get '/plays/show/all' do
+    #plays/index
     erb :'plays/show/all'
   end
 
@@ -36,6 +45,7 @@ class PlayController < ApplicationController
   end
 
   get '/plays/more/:id' do
+    #nested routing, playwrights/:id/plays
     @play = Play.find(params[:id])
     @playwright = Playwright.find(@play.playwright_id)
     erb :'plays/show/more'

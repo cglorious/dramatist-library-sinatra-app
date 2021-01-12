@@ -29,7 +29,7 @@ class PlaywrightController < ApplicationController
 
   post '/bio' do
     current_user.update(bio: params[:bio])
-    current_user.save
+    #current_user.save
     redirect to '/home'
   end
 
