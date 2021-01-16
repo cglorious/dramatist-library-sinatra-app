@@ -1,10 +1,10 @@
 class PlayController < ApplicationController
 
-  get '/home' do
+  #get '/index' do
     #within the Playwright
-    @plays = Play.all
-    erb :'plays/home'
-  end
+    #@plays = Play.all
+    #erb :'plays/index'
+  #end
 
   get '/plays/new' do
     erb :'plays/new'
@@ -57,7 +57,7 @@ class PlayController < ApplicationController
       if @play && @play.playwright == current_user
         erb :'plays/edit'
       else
-        redirect to '/home'
+        redirect to '/index'
       end
     else
       redirect to '/login'
@@ -87,7 +87,7 @@ class PlayController < ApplicationController
       if @play && @play.playwright == current_user
         @play.delete
       end
-      redirect to '/home'
+      redirect to '/index'
     else
       redirect to '/login'
     end
