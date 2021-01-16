@@ -1,11 +1,5 @@
 class PlayController < ApplicationController
 
-  #get '/index' do
-    #within the Playwright
-    #@plays = Play.all
-    #erb :'plays/index'
-  #end
-
   get '/plays/new' do
     erb :'plays/new'
   end
