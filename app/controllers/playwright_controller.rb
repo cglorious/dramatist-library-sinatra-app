@@ -1,15 +1,15 @@
 class PlaywrightController < ApplicationController
 
-  get '/index' do
+  get '/admin/index' do
     @plays = Play.all
-    erb :'playwrights/index'
+    erb :'playwrights/admin/index'
   end
 
   get '/login' do
     if !logged_in?
       erb :'playwrights/login'
     else
-      redirect to '/index'
+      redirect to '/admin/index'
     end
   end
 
@@ -18,7 +18,7 @@ class PlaywrightController < ApplicationController
     if playwright && playwright.authenticate(params[:password])
       session[:user_id] = playwright.id
       if current_user.bio
-        redirect to '/index'
+        redirect to '/admin/index'
       else
         redirect to '/bio'
       end
@@ -34,15 +34,14 @@ class PlaywrightController < ApplicationController
 
   post '/bio' do
     current_user.update(bio: params[:bio])
-    #current_user.save
-    redirect to '/index'
+    redirect to '/admin/index'
   end
 
   get '/signup' do
     if !logged_in?
       erb :'playwrights/signup'
     else
-      redirect to '/index'
+      redirect to '/admin/index'
     end
   end
 
@@ -56,9 +55,9 @@ class PlaywrightController < ApplicationController
     end
   end
 
-  get '/settings' do
+  get '/admin/settings' do
     @playwright = Playwright.find(current_user.id)
-    erb :'playwrights/settings'
+    erb :'playwrights/admin/settings'
   end
 
   patch '/settings' do
@@ -66,19 +65,19 @@ class PlaywrightController < ApplicationController
     if logged_in?
       @playwright.update(name: params[:name], email: params[:email], bio: params[:bio])
       @playwright.save
-      redirect to '/index'
+      redirect to '/admin/index'
     else
       erb :'playwrights/login'
     end
   end
 
-  get '/playwrights/show/all' do
-    erb :'playwrights/show/all'
+  get '/playwrights/index' do
+    erb :'playwrights/index'
   end
 
   get '/playwrights/:id' do
     @playwright = Playwright.find(params[:id])
-    erb :'/playwrights/show/show'
+    erb :'/playwrights/show'
   end
 
   get '/logout' do

@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
   <head>
-    <title>Playwrights</title>
+    <title>Plays</title>
     <style>
       hr.solid {
         border-top: 1px solid #bbb;
       }
-      .playwright-link:link {
+      .play-link:link {
         color: #0277bd;
         background-color: transparent;
       }
-      .playwright-link:visited  {
+      .play-link:visited {
         color: #0277bd;
         background-color: transparent;
       }
@@ -37,23 +37,22 @@
   </head>
 
   <body>
-    <h2>Playwrights</h2>
+  <h2> Plays </h2>
 
-    <h4> List of Playwrights </h4>
+  <h4> List of Plays </h4>
     <br>
-    <ul>
-      <% Playwright.all.each do |playwright| %>
-      <a class="playwright-link" href="/playwrights/<%= playwright.id %>"><li><%= playwright.name %></li></a>
+  <ul>
+    <% Play.all.each do |play| %>
+      <a class= "play-link" href="/plays/<%= play.id %>"><li><%= play.name %></li></a>
       <br>
       <% end %>
-    </ul>
+  </ul>
 
-    <div id="all-menu">
-      <hr class="solid">
-      <br>
-      <a class="button" href="/index"><button class="menu-btns">Home</button></a>
-      <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
+  <div id="all-menu">
+    <hr class="solid">
+    <br>
+    <a class="button" href="/admin/index"><button class="menu-btns">Home</button></a>
+    <a class="button" href="/logout"><button class="menu-btns">Logout</button></a>
     </div>
-
   </body>
 </html>

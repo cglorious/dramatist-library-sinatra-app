@@ -12,37 +12,22 @@ class PlayController < ApplicationController
       else
         erb :'plays/new'
       end
-
-      #if params[:name] == "" || params[:genre] == "" || params[:synopsis] == ""
-      #  redirect to '/plays/new'
-      #else
-      #  @play = Play.create(name: params[:name], genre: params[:genre], synopsis: params[:synopsis], playwright_id: current_user.id)
-      #  redirect to "/plays/#{@play.id}"
-      #end
     else
       redirect to '/login'
     end
   end
 
-  get '/plays/show/all' do
-    #plays/index
-    erb :'plays/show/all'
+  get '/plays/index' do
+    erb :'plays/index'
   end
 
   get '/plays/:id' do
     if logged_in?
       @play = Play.find(params[:id])
-      erb :'plays/show/show'
+      erb :'plays/show'
     else
       redirect to '/login'
     end
-  end
-
-  get '/plays/more/:id' do
-    #nested routing, playwrights/:id/plays
-    @play = Play.find(params[:id])
-    @playwright = Playwright.find(@play.playwright_id)
-    erb :'plays/show/more'
   end
 
   get '/plays/:id/edit' do
@@ -86,6 +71,5 @@ class PlayController < ApplicationController
       redirect to '/login'
     end
   end
-
 
 end
